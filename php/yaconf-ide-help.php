@@ -12,12 +12,12 @@ final class Yaconf
   * @params mixed $default return value when $name config is not exists.
   * @return mixed $default or an array from $name
   */
-  public static function get(){}
+  public static function get(string $name, mixed $default){}
   
   /**
   * Check if the $name exists.
   * @params sting $name
   * @return bool
   */
-  public static function has($name){}
+  public static function has(string $name){}
 }
