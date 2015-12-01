@@ -1,5 +1,5 @@
 <?php
-define('YAFCONF_VER', '3.0');
+define('YACONF_VER', '3.0');
 /**
 * @link https://github.com/laruence/yaconf
 */
