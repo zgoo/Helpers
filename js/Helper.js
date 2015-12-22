@@ -1,6 +1,6 @@
-var H = {};
+var H = {
   // 取一个int类型的随机数
-  H.RandomInt = function () {
+  randomInt : function () {
     try {
       // 生成 32bit unsigned integer, 伪随机数
       var a = new Uint32Array(1);
@@ -9,14 +9,14 @@ var H = {};
     } catch (err) {
       return Math.round(2147483647 * Math.random())
     }
-  };
+  },
 
   /**
    * 获取监听的dom对象，支持 selector， ID； 如果是className，也需要保证className唯一，否则，无法获取dom对象
    * @param selector
    * @returns object
    */
-  H.getListenObject = function (selector) {
+  getListenObject = function (selector) {
     var domObj = document.getElementById(selector);
     // 若selector是 className
     if (!domObj && typeof domObj !== 'undefined' && domObj !== 0) {
@@ -39,7 +39,7 @@ var H = {};
       }
     }
     return domObj;
-  };
+  },
 
   /**
    * 添加监听事件，兼容IE6+，其他
@@ -47,7 +47,7 @@ var H = {};
    * @param event
    * @param func
    */
-  H.attachEventListener = function (target, event, func) {
+  attachEventListener = function (target, event, func) {
     if (target.addEventListener) {
       // 监听IE9，谷歌和火狐
       target.addEventListener(event, func, false);
@@ -57,7 +57,7 @@ var H = {};
     } else {
       target["on" + event] = func;
     }
-  };
+  },
 
   /**
    * 移除监听事件，兼容IE6+，其他
@@ -65,7 +65,7 @@ var H = {};
    * @param event
    * @param func
    */
-  H.removeEventListener = function (target, event, func) {
+  removeEventListener = function (target, event, func) {
     if (target.removeEventListener) {
       // 监听IE9，谷歌和火狐
       target.removeEventListener(event, func, false);
@@ -75,4 +75,5 @@ var H = {};
     } else {
       delete target["on" + event];
     }
-  };
+  }
+};
