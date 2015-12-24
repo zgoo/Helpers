@@ -75,5 +75,16 @@ var H = {
     } else {
       delete target["on" + event];
     }
+  },
+  
+  /**
+ * read the cookie value
+ * @param name
+ * @returns mixed|string/0 
+ */
+  getCookie : function (name) {
+    var pattern = new RegExp('(^|;)[ ]*' + name + '=([^;]*)'),
+    match = pattern.exec(document.cookie);
+    return match ? window.decodeURIComponent(match[2]) : 0;
   }
 };
