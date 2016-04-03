@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-I am on master branch
-=======
-I am on develop branch
->>>>>>> develop
+test develop
